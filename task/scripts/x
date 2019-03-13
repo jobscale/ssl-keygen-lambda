@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory=ssl
+. scripts/config
 
 main() {
   echo '###################################'
@@ -13,6 +13,7 @@ main() {
   echo '###################################'
   ls /bin | xargs
   echo '###################################'
+  rm -fr $directory
   mkdir -p $directory
   scripts/ssl-keygen-server.sh
   scripts/ssl-keygen-client.sh

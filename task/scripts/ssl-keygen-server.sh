@@ -1,12 +1,6 @@
 #!/bin/bash -eu
 
-directory=ssl
-country=JA
-state=Osaka
-locality=Osaka
-organizational=jsx.jp
-unit=Developpers
-common=jsx.jp
+. scripts/config
 
 rsa() {
   openssl req \

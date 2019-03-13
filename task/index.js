@@ -15,7 +15,7 @@ const run = {
   },
   sync() {},
   async() {
-    return run.shell({ command: 'find -type f' })
+    return run.shell({ command: 'find -type f -ls' })
     .then(run.logger.log)
     .catch(run.logger.error)
     .then(() => run.shell({ command: 'scripts/x' }))
