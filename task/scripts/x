@@ -1,0 +1,21 @@
+#!/bin/bash
+
+directory=ssl
+
+main() {
+  echo '###################################'
+  hostname
+  id
+  which openssl
+  which bash
+  which ssh
+  which git
+  echo '###################################'
+  ls /bin | xargs
+  echo '###################################'
+  mkdir -p $directory
+  scripts/ssl-keygen-server.sh
+  scripts/ssl-keygen-client.sh
+  ls -l $directory
+}
+main 2>&1
