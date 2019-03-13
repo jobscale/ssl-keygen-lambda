@@ -25,5 +25,5 @@ const run = {
 };
 exports.handler = async event => {
   run.logger.log(event);
-  return run[event.command]();
+  return run[event.command] ? run[event.command]() : Promise.reject(new Error('command not found.'));
 };
