@@ -8,6 +8,16 @@
     "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "globals": {
+      "logger": "readonly"
+    },
+    "rules": {}
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
