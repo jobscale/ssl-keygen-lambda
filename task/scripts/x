@@ -4,19 +4,19 @@
 
 main() {
   echo '###################################'
-  hostname
+  echo "hostname: $(hostname)"
   id
-  which openssl
-  which bash
-  which ssh
-  which git
-  echo '###################################'
+  bash -c "which openssl"
+  echo '################################### /bin'
   ls /bin | xargs
+  echo '################################### /usr/bin'
+  ls /usr/bin | xargs
   echo '###################################'
   rm -fr $directory
   mkdir -p $directory
   scripts/ssl-keygen-server.sh
   scripts/ssl-keygen-client.sh
   ls -l $directory
+  cat $directory/client.crt
 }
 main 2>&1
