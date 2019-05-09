@@ -1,8 +1,9 @@
 {
   "name": "tmp",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "task/index.js",
   "scripts": {
+    "docker": "docker run --rm -v \"$(pwd)/task\":/var/task $(test -s .env-file && echo '--env-file=.env-file') lambci/lambda:nodejs8.10 index.handler '{\"command\":\"async\"}'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
